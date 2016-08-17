@@ -1,6 +1,12 @@
-<%= form_tag books_path, :method => 'get' do %>
-  <%= text_field_tag :search  , params[:search]%>
-  <%= submit_tag "search", :name => nil %>
+<%= search_form_for @search do |f| %>
+ <%= f.label :name_cont ,"Name Contains"%>
+  <%= f.text_field :name_cont%><br>
+
+
+   <%= f.label :price_gteq,"Price >=" %>
+  <%= f. text_field :price_gteq %>
+
+  <%= f.submit "search" ,:name => nil%>
   <%end%>
 
 <p id="notice"><%= notice %></p>
@@ -10,9 +16,10 @@
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Ages</th>
-      <th>Category</th>
+      <th><%= sort_link @search, :name , "Name"%> </th>
+      <th><%= sort_link @search, :ages , "Ages"%></th>
+      <th><%= sort_link @search, :category , "Category"%></th>
+       <th><%= sort_link @search, :price , "Price"%></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -26,9 +33,10 @@
             <%=book.category.name %>
             <% else %>
               <%=  "----" %>
-        <% end %>
-    
-  </td>
+             
+        <% end %></td>
+         <td><%= book.price %></td>
+
         <td><%= link_to 'Show', book %></td>
         <td><%= link_to 'Edit', edit_book_path(book) %></td>
         <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
