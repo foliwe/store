@@ -1,0 +1,7 @@
+
+<%= simple_form_for @age do |f| %>
+  <%= f.input :name %><br>
+  <%= f.association :books, as: :check_boxes %><br>
+  <%= f.button :submit %><br>
+  <% end %>
+

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Keyword:</strong>
+  <%= @search.keyword %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @search.category_id %>
+</p>
+
+<p>
+  <strong>Age ids:</strong>
+  <%= @search.age_ids %>
+</p>
+
+<%= link_to 'Edit', edit_search_path(@search) %> |
+<%= link_to 'Back', searches_path %>

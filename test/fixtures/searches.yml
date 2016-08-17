@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  keyword: MyString
+  category_id: 1
+  age_ids: 1
+
+two:
+  keyword: MyString
+  category_id: 1
+  age_ids: 1
