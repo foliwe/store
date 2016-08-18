@@ -5,7 +5,7 @@ class BooksController < ApplicationController
   # GET /books.json
   def index
     @search = Book.ransack(params[:q])
-    @books = @search.result
+    @books = @search.result.includes(:ages, :category)
     #if params[:search]
     #@books = Book.where(['name Like ?',"%#{params[:search]}%"])
   #else

@@ -3,8 +3,8 @@
 
   <div class="form-inputs">
     <%= f.input :keyword %>
-    <%= f.input :category_id %>
-    <%= f.input :age_ids %>
+    <%= f.collection_select :category_id, Category.order(:name),:id, :name, :prompt => "Select a category" %><br>
+    <%= f.collection_select  :age_ids, Age.order(:name), :id, :name ,{:selected => :age_ids, :include_blank => true}, {:multiple => true} %>
   </div>
 
   <div class="form-actions">

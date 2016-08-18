@@ -1,19 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Keyword:</strong>
-  <%= @search.keyword %>
-</p>
 
-<p>
-  <strong>Category:</strong>
-  <%= @search.category_id %>
-</p>
+  <%if @search.search_books.empty? %>
+ <p> nothing</p>
+ <%else%>
+  <% @search.search_books.each do |c|%>
 
-<p>
-  <strong>Age ids:</strong>
-  <%= @search.age_ids %>
-</p>
+  <p><%= link_to c.name, c %></p>
+  <p><%=c.category.name%></p>
 
-<%= link_to 'Edit', edit_search_path(@search) %> |
-<%= link_to 'Back', searches_path %>
+  <%end%>
+  <%end%>

@@ -1,17 +1,14 @@
 <%= search_form_for @search do |f| %>
  <%= f.label :name_cont ,"Name Contains"%>
-  <%= f.text_field :name_cont%><br>
-
-
-   <%= f.label :price_gteq,"Price >=" %>
-  <%= f. text_field :price_gteq %>
-
+  <%= f.text_field :name_cont%>
   <%= f.submit "search" ,:name => nil%>
   <%end%>
 
 <p id="notice"><%= notice %></p>
+<%= link_to 'Advance search',new_search_path %>
 
 <h1>Listing Books</h1>
+
 
 <table>
   <thead>
